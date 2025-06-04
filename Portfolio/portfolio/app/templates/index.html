@@ -1,0 +1,525 @@
+{% load static %}
+<title>Kiran Paudel</title>
+<link rel="icon" href="{% static 'images/favicon.gif' %}" type="image/x-icon">
+<div class="snow-background">
+  <div class="wrapper" >
+      <h1 class="first-section flicker"><span>KIRAN PAUDEL</span></h1>
+      <div class="inner" style="--quantity: 10;">
+        <div class="card" style="--index: 0;--color-card: 142, 249, 252;">
+          <div class="img">
+              <img src="{% static 'images/kiran_about.png' %}" alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 1;--color-card: 142, 252, 157;">
+          <div class="img">
+              <img src="{% static 'images/k1.jpg' %}"  alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 2;--color-card: 142, 252, 157;">
+          <div class="img">
+              <img src="{% static 'images/k2.jpg' %}"  alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 3;--color-card: 215, 252, 142;">
+          <div class="img">
+              <img src="{% static 'images/k3.jpg' %}"  alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 4;--color-card: 252, 252, 142;">
+          <div class="img">
+              <img src="{% static 'images/k4.jpg' %}" alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 5;--color-card: 252, 208, 142;">
+          <div class="img">
+              <img src="{% static 'images/kiran_about.jpg' %}"  alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 6;--color-card: 252, 142, 142;">
+          <div class="img">
+              <img src="{% static 'images/k5.jpg' %}" alt="Kiran Paudel">
+            </div>
+        </div>
+        <div class="card" style="--index: 7;--color-card: 252, 142, 239;">
+          <div class="img">
+              <img src="{% static 'images/k6.jpg' %}" alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 8;--color-card: 204, 142, 252;">
+          <div class="img">
+              <img src="{% static 'images/k9.jpg' %}" alt="Kiran Paudel">
+          </div>
+        </div>
+        <div class="card" style="--index: 9;--color-card: 142, 202, 252;">
+          <div class="img">
+            <img src="{% static 'images/k8.jpg' %}" alt="Kiran Paudel">
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>             
+
+
+    </div>
+  
+  <div class="book">
+    <a href="{% url 'home' %}" class="portfolio-button">View Portfolio</a>
+    <div class="cover">
+        <p>KIRAN PAUDEL</p>
+    </div>
+  </div>
+  
+ 
+
+  
+<style>
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.inner {
+  --w: 100px;
+  --h: 150px;
+  --translateZ: calc((var(--w) + var(--h)) + 0px);
+  --rotateX: -15deg;
+  --perspective: 1000px;
+  position: absolute;
+  width: var(--w);
+  height: var(--h);
+  top: 25%;
+  left: calc(50% - (var(--w) / 2) - 2.5px);
+  z-index: 2;
+  transform-style: preserve-3d;
+  transform: perspective(var(--perspective));
+  animation: rotating 20s linear infinite; /* */
+}
+@keyframes rotating {
+  from {
+    transform: perspective(var(--perspective)) rotateX(var(--rotateX))
+      rotateY(0);
+  }
+  to {
+    transform: perspective(var(--perspective)) rotateX(var(--rotateX))
+      rotateY(1turn);
+  }
+}
+
+.card {
+  width: 150px;
+  height: 350px;
+  margin-top: -60px;
+  position: absolute;
+  border: 2px solid rgba(var(--color-card));
+  border-radius: 12px;
+  overflow: hidden;
+  inset: 0;
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(var(--translateZ));
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: #0000
+    radial-gradient(
+      circle,
+      rgba(var(--color-card), 0.2) 0%,
+      rgba(var(--color-card), 0.6) 80%,
+      rgba(var(--color-card), 0.9) 100%
+    );
+  background-size: cover;
+  image-resolution: 300dpi;
+}
+
+
+
+
+
+/* Snow */
+.snow-background {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #080809; /* Dark background for the snow effect */
+   pointer-events: none; /* Ensure it doesn't interfere with clicks */
+   z-index: -1; /* Place it behind other content */
+}
+
+.snow {
+   position: absolute;
+   width: var(--size); /* Random size for snowflakes */
+   height: var(--size);
+   background: white;
+   border-radius: 50%;
+   animation: fall linear infinite;
+   opacity: var(--opacity); /* Random opacity for realism */
+   top: calc(-10% - (20% * random())); /* Start at random heights above the screen */
+}
+
+@keyframes fall {
+   to {
+      transform: translateY(100vh);
+   }
+}
+
+/* Generate random snowflakes */
+.snow:nth-child(n) {
+   --size: calc(5px + (10px * random())); /* Random size between 5px and 15px */
+   --opacity: calc(0.5 + (0.5 * random())); /* Random opacity between 0.5 and 1 */
+   left: calc(100% * random()); /* Random horizontal position */
+   animation-duration: calc(5s + (10s * random())); /* Random duration between 5s and 15s */
+   animation-delay: calc(-5s * random()); /* Random delay for staggered start */
+}
+
+/* snow ends */
+
+/* Books */
+.book {
+  /* Update the background color to match .cover */
+  background-color: rgb(8, 8, 8);
+  
+  /* Update the border radius to match .cover */
+  border-radius: 10px;
+  
+  /* Update the width and height to match .cover */
+  width: 25%;
+  height: 25%;
+  
+  /* Update the cursor to match .cover */
+  cursor: pointer;
+  
+  /* Update the transition to match .cover */
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  
+  /* Update the transform origin to match .cover */
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  
+  /* Update the box shadow to match .cover */
+  -webkit-box-shadow: 1px 1px 12px #080808;
+  box-shadow: 1px 1px 12px #0a0a0a;
+  
+  /* Update the display to match .cover */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  
+  /* Update the alignment to match .cover */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  
+  /* Update the justification to match .cover */
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  
+  /* Update the color to match .cover */
+  color: #f4efef;
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: rgb(8, 8, 8);
+  width: 25%;
+  height: 25%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #070707;
+  box-shadow: 1px 1px 12px #0e0d0d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #f4efef;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
+
+p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+/* ends */
+
+.portfolio-button {
+  
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.portfolio-button:hover {
+  background-color: #0d0d0d;
+}
+
+
+
+
+/* Responsive */
+/* iPhone 5/SE */
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  .inner {
+    --w: 80px;
+    --h: 120px;
+  }
+  .card {
+    width: 120px;
+    height: 250px;
+  }
+  .book {
+    width: 20%;
+    height: 20%;
+  }
+  .cover {
+    width: 20%;
+    height: 20%;
+  }
+  .portfolio-button {
+    padding: 5px 10px;
+  }
+}
+
+/* iPhone 6/7/8 */
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  .inner {
+    --w: 100px;
+    --h: 150px;
+  }
+  .card {
+    width: 150px;
+    height: 300px;
+  }
+  .book {
+    width: 20%;
+    height: 20%;
+  }
+  .cover {
+    width: 20%;
+    height: 20%;
+  }
+  .portfolio-button {
+    padding: 5px 10px;
+  }
+}
+
+/* iPhone 6/7/8 Plus */
+@media only screen and (min-width: 414px) and (max-width: 736px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  .inner {
+    --w: 120px;
+    --h: 180px;
+  }
+  .card {
+    width: 180px;
+    height: 350px;
+  }
+  .book {
+    width: 20%;
+    height: 20%;
+  }
+  .cover {
+    width: 20%;
+    height: 20%;
+  }
+  .portfolio-button {
+    padding: 5px 10px;
+  }
+}
+
+/* iPhone X/XS */
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  .inner {
+    --w: 120px;
+    --h: 180px;
+  }
+  .card {
+    width: 180px;
+    height: 350px;
+  }
+  .book {
+    width: 20%;
+    height: 20%;
+  }
+  .cover {
+    width: 20%;
+    height: 20%;
+  }
+  .portfolio-button {
+    padding: 5px 10px;
+  }
+}
+
+/* iPhone XS Max */
+@media only screen and (min-width: 414px) and (max-width: 896px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  .inner {
+    --w: 150px;
+    --h: 220px;
+  }
+  .card {
+    width: 220px;
+    height: 400px;
+  }
+  .book {
+    width: 20%;
+    height: 20%;
+  }
+  .cover {
+    width: 50%;
+    height: 20%;
+  }
+  .portfolio-button {
+    padding: 5px 10px;
+  }
+}
+
+/* Android Phones */
+@media only screen and (min-width: 320px) and (max-width: 640px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  .inner {
+    --w: 100px;
+    --h: 150px;
+  }
+  .card {
+    width: 150px;
+    height: 300px;
+  }
+  .book {
+    width: 20%;
+    height: 20%;
+  }
+  .cover {
+    width: 20%;
+    height: 20%;
+  }
+  .portfolio-button {
+    padding: 5px 10px;
+  }
+}
+
+/* Android Tablets */
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  .wrapper {
+    width: 100%;
+    height: 100vh;
+  }
+  .inner {
+    --w: 150px;
+    --h: 220px;
+  }
+  .card {
+    width: 220px;
+    height: 400px;
+  }
+  .book {
+    width: 20%;
+    height: 20%;
+  }
+  .cover {
+    width: 20%;
+    height: 20%;
+  }
+  .portfolio-button {
+    padding: 5px 10px;
+  }
+}
+
+
+/* Add this to your existing media queries */
+
+@media only screen and (min-width: 320px) and (max-width: 736px){
+  .cover {
+    position: relative;
+    top: auto;
+    width: 500px;
+  }
+  .book {
+    position: relative;
+    top: auto;
+  }
+}
+
+</style>
+
+
+
+
+
+
+
+<script>const snowContainer = document.querySelector('.snow-background');
+  const numSnowflakes = 100; // Number of snowflakes
+  
+  for (let i = 0; i < numSnowflakes; i++) {
+     const snowflake = document.createElement('div');
+     snowflake.classList.add('snow');
+  
+     // Random properties
+     snowflake.style.setProperty('--size', `${5 + Math.random() * 10}px`);
+     snowflake.style.setProperty('--opacity', `${0.5 + Math.random() * 0.5}`);
+     snowflake.style.setProperty('left', `${Math.random() * 100}%`);
+     snowflake.style.setProperty('top', `${-10 - (20 * Math.random())}%`); // Start above the screen
+     snowflake.style.setProperty('animation-duration', `${5 + Math.random() * 10}s`);
+     snowflake.style.setProperty('animation-delay', `${-5 * Math.random()}s`);
+  
+     snowContainer.appendChild(snowflake);
+  }</script>
+  

@@ -1,0 +1,733 @@
+/* Navbar Styles */
+.navbar {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+}
+
+.container {
+    display: flex; /* Use flexbox for the container */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between brand/logo and nav links */
+    width: 100%; /* Full width */
+}
+
+.nepal-flag {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Adjust font size for brand */
+    font-weight: bold;
+    color: #100505;
+}
+
+.navbar-nav {
+    display: flex; /* Use flexbox for nav links */
+    flex-grow: 1; /* Allow nav items to grow and take available space */
+    justify-content: center; /* Center nav items */
+}
+
+.nav-item {
+    margin: 0 10px; /* Space between nav items */
+}
+
+.nav-link {
+    color: #160202; /* Change link color */
+    font-size: 1rem; /* Adjust font size for better mobile readability */
+}
+
+.nav-link:hover {
+    color    : #3467f3; /* Change color on hover */
+}
+
+.nav-social-link {
+    display: flex; /* Use flexbox for social links */
+    gap: 15px; /* Space between social links */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Keep items in a row on mobile */
+        justify-content: space-between; /* Space between items */
+    }
+
+    .navbar-nav {
+        justify-content: center; /* Center nav items */
+    }
+
+    .nav-link {
+        margin: 0 5px; /* Adjust margin for smaller screens */
+    }
+}
+ /* First Section */
+ .first-section {
+    font-size: 2rem; /* Adjusted for better mobile visibility */
+ }
+ 
+ /* Responsive Styles */
+ @media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center; /* Center align nav items on mobile */
+        flex-direction: column; /* Stack items vertically */
+    }
+ 
+    .nav-link {
+        margin: 5px 0; /* Stack links with vertical spacing */
+    }
+ 
+    .first-section {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+ }
+ 
+ @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+ }
+ 
+ .flicker {
+    animation: flicker 1s infinite; /* Adjust the duration as needed */
+ }
+ 
+ @keyframes crumble {
+    0% { transform: translateY(0); opacity: 1; }
+    25% { transform: translateY(-5px) rotate(-1deg); opacity: 0.9; }
+    50% { transform: translateY(5px) rotate(1deg); opacity: 0.8; }
+    75% { transform: translateY(-3px) rotate(-0.5deg); opacity: 0.9; }
+    100% { transform: translateY(0); opacity: 1; }
+ }
+ 
+ .crumble {
+    animation: crumble 1s infinite; /* Adjust the duration as needed */
+ }
+ 
+ .guitar-pick {
+    width: 100%; /* Make responsive */
+    max-width: 350px; /* Limit max width */
+    height: auto; /* Maintain aspect ratio */
+    clip-path: polygon(50% 0%, 100% 80%, 80% 100%, 20% 100%, 0% 80%);
+    object-fit: cover; /* Ensure the image covers the area */
+ }
+ 
+ /* Image Styles */
+ .img {
+    height: auto; /* Make responsive */
+    width: 100%;
+    object-fit: cover;
+ }
+ 
+ .about-img {
+    width: 100%; /* Make responsive */
+    max-width: 350px; /* Limit max width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+ }
+ 
+ /* Hover Effects */
+ .ho {
+    box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+ }
+ 
+ /* Body Styles */
+ body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+ }
+ 
+ /* Container Styles */
+ .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(57, 20, 138, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically for better mobile layout */
+    align-items: center; /* Center items */
+    max-width: 800px;
+    margin: auto; /* Center the container */
+ }
+ 
+ /* Text Section Styles */
+ .text-section {
+    flex: 1;
+    padding-right: 20px;
+ }
+ 
+ .text-section h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+ }
+ 
+ .text-section h1 span {
+    display: block;
+ }
+ 
+ .text-section p {
+    color: #666;
+    margin: 10px 0;
+ }
+ 
+ .text-section p strong {
+    color: #333;
+ }
+ 
+ .text-section .contact-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c63ff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+ }
+ 
+ /* Icons Styles */
+ .icons {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+ }
+ 
+ .icons a {
+    color: #6c63ff;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+ }
+ 
+ /* About Section Styles */
+ .about {
+    text-align: center;
+ }
+ 
+ .about h1 {
+    font-size: 2.5em;
+    color: #121010; /* Bootstrap danger color */
+ }
+ 
+ /* Service Section Styles */
+ .service {
+    text-align: center;
+ }
+ 
+ .service h1 {
+    font-size: 2.5em;
+    color: #dc3545; /* Bootstrap danger color */
+ }
+ 
+ /* Contact Section Styles */
+ .contact {
+    text-align: center;
+ }
+ 
+ .contact h1 {
+    font-size: 2.5em;
+    color: #dc3545; /* Bootstrap danger color */
+ }
+ 
+ /* Video Section Style */
+ #video-section {
+    padding: 40px 0; /* Add padding to the section */
+ }
+ 
+ .video-item {
+    border: 1px solid #ddd; /* Light border around the video item */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures content doesn't overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+ }
+ 
+ .video-item:hover {
+    transform: scale(1.02); /* Slightly enlarge the video item on hover */
+ }
+ 
+ .video-thumbnail {
+    width: 100%; /* Ensure the video takes the full width of the item */
+    height: auto; /* Maintain aspect ratio */
+ }
+ 
+ .video-details {
+    padding: 15px; /* Padding inside the video details */
+ }
+ 
+ .video-title {
+    font-size: 1.25rem; /* Font size for the video title */
+    margin-bottom: 10px; /* Space below the title */
+ }
+ 
+ .video-description {
+    font-size: 1rem; /* Font size for the video description */
+    margin-bottom: 15px; /* Space below the description */
+ }
+ 
+ .btn {
+    width: 100%; /* Make buttons full width */
+    padding: 10px; /* Padding for buttons */
+    font-size: 1rem; /* Font size for buttons */
+ }
+ 
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+    .video-item {
+        margin-bottom: 20px; /* Space between video items on smaller screens */
+    }
+ 
+    .text-section h1 {
+        font-size: 1.8em; /* Smaller font size for mobile */
+    }
+ 
+    .text-section p {
+        font-size: 0.9em; /* Smaller paragraph font size */
+    }
+ 
+    .contact-btn {
+        padding: 8px 16px; /* Adjust button padding for mobile */
+        font-size: 0.9em; /* Smaller button font size */
+    }
+ }
+ 
+ /* Social Style */
+ .card {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: center;
+    background: #e7e7e7;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    width: 100px; /* Set a smaller width for the card */
+ }
+ 
+ .toggle-button {
+    background-color: #4d60b6; /* Button background color */
+    color: rgb(18, 19, 18); /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-family: 'Fira Mono', monospace; /* Font style */
+    font-size: 14px; /* Font size */
+ }
+ 
+ .social-buttons {
+    display: none; /* Initially hide the social buttons */
+    flex-direction: row; /* Arrange buttons in a row */
+    width: 100%; /* Full width for buttons */
+    justify-content: space-around; /* Space buttons evenly */
+    margin-top: 10px; /* Space between button and icons */
+    opacity: 0; /* Start hidden */
+    transform: translateY(-10px); /* Start slightly above */
+    transition: opacity 0.3s ease, transform 0.1s ease; /* Transition for opacity and position */
+ }
+ 
+ .social-buttons.show {
+    display: flex; /* Show the icons */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Slide down to original position */
+ }
+ 
+ .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%; /* Adjust width as needed */
+    color: rgb(15, 14, 14); /* Text color */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.25s; /* Smooth background transition */
+ }
+ 
+ .social-link:hover {
+    background-color: rgba(193, 55, 17, 0.774); /* Hover effect */
+ }
+ 
+ .social-link i {
+    margin-right: 8px; /* Space between icon and text */
+ }
+ 
+ /* Flag */
+ .nepal-flag {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Space between brand name and flag */
+ }
+ 
+ /* Contact */
+ .container {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+ }
+ 
+ .contact-info {
+    flex: 1;
+    padding-right: 20px;
+ }
+ 
+ .contact-info div {
+    margin-bottom: 20px;
+ }
+ 
+ .contact-info i {
+    font-size: 24px;
+    color: #6c63ff;
+    margin-right: 10px;
+ }
+ 
+ .contact-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+ }
+ 
+ .contact-info p {
+    margin: 5px 0 0;
+    color: #666;
+ }
+ 
+ .contact-form {
+    flex: 1;
+ }
+ 
+ .contact-form input,
+ .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f3f3ff;
+ }
+ 
+ .contact-form button {
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+ }
+ 
+ .contact-form button i {
+    margin-left: 5px;
+ }
+ 
+ @media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on mobile */
+    }
+ 
+    .contact-info {
+        padding-right: 0; /* Remove right padding */
+        margin-bottom: 20px; /* Space below contact info */
+    }
+ 
+    .contact-info h3 {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+ 
+    .contact-form button {
+        padding: 8px 16px; /* Adjust button padding for mobile */
+        font-size: 14px; /* Smaller button font size */
+    }
+ }
+ 
+ /* Skills */
+ .container {
+    text-align: center; /* Center align the title and subtitle */
+ }
+ 
+ .skills {
+    margin-top: 0.7rem;
+    text-align: left; /* Keep skills aligned to the left */
+ }
+ 
+ .skill-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom    : 1rem;
+    cursor: pointer;
+ }
+ 
+ .sub-skills {
+    display: none;
+    padding: 0 1rem 1rem 1rem;
+ }
+ 
+ .sub-skills ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+ }
+ 
+ .sub-skills li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+ }
+ 
+ /* Education */
+ .timeline-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    margin: 0 auto;
+ }
+ 
+ .timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+ }
+ 
+ .timeline-item:last-child {
+    margin-bottom: 0;
+ }
+ 
+ .timeline-content {
+    flex: 1;
+ }
+ 
+ .timeline-content h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+ }
+ 
+ .timeline-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+ }
+ 
+ .timeline-content .date {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #999;
+ }
+ 
+ .timeline-content .date i {
+    margin-right: 5px;
+ }
+ 
+ .timeline-content a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #6c63ff;
+    text-decoration: none;
+ }
+ 
+ .timeline-content a i {
+    margin-left: 5px;
+ }
+ 
+ .timeline-line {
+    width: 2px;
+    background-color: #6c63ff;
+    height: calc(100% - 20px);
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+ }
+ 
+ .timeline-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #6c63ff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+ 
+ .timeline-dot:nth-child(1) {
+    top: 0;
+ }
+ 
+ .timeline-dot:nth-child(2) {
+    top: 50%;
+    transform: translate(-50%, -50%);
+ }
+ 
+ .timeline-dot:nth-child(3) {
+    bottom: 0;
+ }
+ 
+ @media (max-width: 600px) {
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+ 
+    .timeline-line {
+        display: none; /* Hide line on mobile */
+    }
+ 
+    .timeline-dot {
+        display: none; /* Hide dots on mobile */
+    }
+ }
+ 
+ /* Popup Styles */
+ .popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+ }
+ 
+ .popup h3 {
+    margin-top: 0;
+ }
+ 
+ .popup-close {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+ }
+ 
+ .popup-close a {
+    color: #6c63ff;
+    text-decoration: none;
+ }
+ 
+ /* Overlay Styles */
+ .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+ }
+ 
+ /* Social Links Styles */
+ .nav-social-links {
+    display: flex;
+    gap: 15px; /* Adjust the space between links */
+ }
+ 
+ .nav-social-link {
+    text-decoration: none; /* Optional: Remove underline */
+    color: inherit; /* Optional: Inherit color */
+ }
+ 
+ .nav-social-link i {
+    font-size: 20px; /* Adjust icon size */
+ }
+ 
+ /* Additional Responsive Adjustments */
+ @media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1rem; /* Smaller brand font size */
+    }
+ 
+    .nav-link {
+        font-size: 0.9rem; /* Smaller link font size */
+    }
+ 
+    .text-section h1 {
+        font-size: 1.5em; /* Smaller title font size */
+    }
+ 
+    .text-section p {
+        font-size: 0.8em; /* Smaller paragraph font size */
+       }
+ 
+       .contact-info h3 {
+           font-size: 16px; /* Smaller font size for contact info */
+       }
+   
+       .contact-form button {
+           padding: 8px 16px; /* Adjust button padding for mobile */
+           font-size: 14px; /* Smaller button font size */
+       }
+   
+       .video-title {
+           font-size: 1.1rem; /* Smaller font size for video titles */
+       }
+   
+       .video-description {
+           font-size: 0.9rem; /* Smaller font size for video descriptions */
+       }
+   
+       .skill-item {
+           padding: 10px; /* Add padding for better touch targets */
+       }
+   
+       .skill-item h3 {
+           font-size: 1.2rem; /* Smaller font size for skill titles */
+       }
+   
+       .timeline-content h3 {
+           font-size: 16px; /* Smaller font size for timeline titles */
+       }
+   
+       .timeline-content p {
+           font-size: 12px; /* Smaller font size for timeline descriptions */
+       }
+   
+       .btn {
+           padding: 8px; /* Adjust button padding for mobile */
+           font-size: 14px; /* Smaller button font size */
+       }
+   }
+   
+   /* Ensure images are responsive */
+   img {
+       max-width: 100%; /* Make images responsive */
+       height: auto; /* Maintain aspect ratio */
+   }
+   
+   /* Flexbox adjustments for smaller screens */
+   @media (max-width: 768px) {
+       .container {
+           flex-direction: column; /* Stack items vertically */
+           padding: 15px; /* Adjust padding for smaller screens */
+       }
+   
+       .icons {
+           flex-direction: row; /* Change to row layout for icons */
+           justify-content: center; /* Center icons */
+       }
+   
+       .social-link {
+           width: auto; /* Allow social links to adjust width */
+           margin: 5px; /* Add margin for spacing */
+       }
+   }
